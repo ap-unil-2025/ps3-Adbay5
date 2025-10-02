@@ -1,27 +1,25 @@
-"""
-Problem 3: Number Analysis
-Analyze a list of numbers provided by the user.
-"""
 
 def get_numbers_from_user():
-    """
-    Get numbers from user until they type 'done'.
-    Return a list of numbers.
-
-    Returns:
-        list: List of numbers entered by user
-    """
     numbers = []
+    x = 1
+    while x == 1:
+        a=input("Type a number")       
 
-    while True:
-        # TODO: Get input from user
-        # TODO: Check if user typed 'done'
-        # TODO: Try to convert to float and add to list
-        # TODO: Handle invalid input gracefully
-        pass
+        if a == "done":
 
-    return numbers
+            x = x-1
+        else :
+            try : 
+                a_float = float(a)
+                numbers.append(a)
 
+            except ValueError :
+                print("Please enter a valid number")
+
+            x=1
+            
+    print(numbers)
+   
 
 def analyze_numbers(numbers):
     """
