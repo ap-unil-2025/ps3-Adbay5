@@ -11,69 +11,50 @@ def get_numbers_from_user():
         else :
             try : 
                 a_float = float(a)
-                numbers.append(a)
+                numbers.append(a_float)
 
             except ValueError :
                 print("Please enter a valid number")
 
             x=1
             
-    print(numbers)
+    return numbers
    
 
 def analyze_numbers(numbers):
-    """
-    Analyze the list and return a dictionary with:
-    - count: number of elements
-    - sum: sum of all numbers
-    - average: average value
-    - minimum: smallest number
-    - maximum: largest number
-    - even_count: count of even numbers
-    - odd_count: count of odd numbers
 
-    Args:
-        numbers (list): List of numbers to analyze
+    count = len(numbers)
+    sum_var = sum(numbers)
+    average_var = count/sum_var
+    min_var = min(numbers)
+    max_var = max(numbers)
+    list_even =[]
+    for i in numbers : 
+        if i%2 == 0 :
+            list_even.append(i)
+    even_count = len(list_even)
+    odd_count = count - even_count
 
-    Returns:
-        dict: Dictionary with analysis results, or None if list is empty
-    """
-    if not numbers:
+    analysis = {"count":count, "sum":sum_var, "average":average_var, 
+    "min": min_var, "max": max_var, "even count":even_count, 
+    "odd count" : odd_count
+    }
+    return analysis
+    if not numbers : 
         return None
 
-    analysis = {}
-
-    # TODO: Calculate count
-    # TODO: Calculate sum
-    # TODO: Calculate average
-    # TODO: Find minimum
-    # TODO: Find maximum
-    # TODO: Count even numbers (hint: use modulo operator)
-    # TODO: Count odd numbers
-
-    return analysis
-
-
 def display_analysis(analysis):
-    """
-    Display the analysis in a formatted way.
+    
 
-    Args:
-        analysis (dict): Dictionary containing analysis results
-    """
+   
     if not analysis:
-        return
+        return None
 
     print("\nAnalysis Results:")
     print("-" * 20)
+    for key, value in analysis.items():
+        print((f"{key}: {value}"))
 
-    # TODO: Display all analysis results in a nice format
-    # Example:
-    # Count: 5
-    # Sum: 25
-    # Average: 5.00
-    # etc.
-    pass
 
 
 def main():
