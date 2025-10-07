@@ -36,7 +36,7 @@ def analyze_numbers(numbers):
     odd_count = count - even_count
 
     analysis = {"count":count, "sum":sum_var, "average":average_var, 
-    "min": min_var, "max": max_var, "even count":even_count, 
+    "minimum": min_var, "max": max_var, "even count":even_count, 
     "odd count" : odd_count
     }
     return analysis
