@@ -26,8 +26,8 @@ def analyze_numbers(numbers):
     count = len(numbers)
     sum_var = sum(numbers)
     average_var = sum_var/count if count > 0 else 0
-    min_var = min(numbers)
-    max_var = max(numbers)
+    min_var = min(numbers) if numbers else None
+    max_var = max(numbers) if numbers else None
     list_even =[]
     for i in numbers : 
         if i%2 == 0 :
@@ -36,12 +36,11 @@ def analyze_numbers(numbers):
     odd_count = count - even_count
 
     analysis = {"count":count, "sum":sum_var, "average":average_var, 
-    "minimum": min_var, "maximum": max_var, "even count":even_count, 
-    "odd count" : odd_count
-    }
+        "minimum": min_var, "maximum": max_var, "even count":even_count, 
+        "odd count" : odd_count
+        }
     return analysis
-    if not numbers : 
-        return None
+  
 
 def display_analysis(analysis):
     
