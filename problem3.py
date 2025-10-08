@@ -23,11 +23,14 @@ def get_numbers_from_user():
 
 def analyze_numbers(numbers):
 
+    if not numbers :
+        return None 
+
     count = len(numbers)
     sum_var = sum(numbers)
-    average_var = sum_var/count if count > 0 else 0
-    min_var = min(numbers) if numbers else None
-    max_var = max(numbers) if numbers else None
+    average_var = sum_var/count 
+    min_var = min(numbers) 
+    max_var = max(numbers) 
     list_even =[]
     for i in numbers : 
         if i%2 == 0 :
