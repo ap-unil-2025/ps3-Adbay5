@@ -1,4 +1,4 @@
-
+2
 def create_sample_file(filename="sample.txt"):
  
     content = """Python is a powerful programming language.
@@ -41,7 +41,7 @@ def count_characters(filename, include_spaces=True):
 
 def find_longest_word(filename):
 
-    with open("test.txt", 'r') as f:
+    with open(filename, 'r') as f:
         text = f.read().replace(",","").replace(".","")
         words =text.split()
         element =words[0]
@@ -53,25 +53,24 @@ def find_longest_word(filename):
 
 
 def word_frequency(filename):
-    """
-    Return a dictionary of word frequencies.
-    Convert words to lowercase and remove punctuation.
 
-    Args:
-        filename (str): Name of the file to analyze
-
-    Returns:
-        dict: Dictionary with words as keys and frequencies as values
-    """
     import string
-
     frequency = {}
 
-    # TODO: Open file
-    # TODO: Read all words
-    # TODO: Convert to lowercase
-    # TODO: Remove punctuation (use string.punctuation)
-    # TODO: Count frequency of each word
+    with open(filename, "r") as f:
+        text = f.read().lower().replace(",", "").replace(".","").replace("'"," ")
+
+    words = text.split()
+
+    cleaned = []
+
+    for i in words :
+        if i not in string.punctuation :
+            cleaned.append(i)
+            for i in cleaned :
+                frequency[i] = cleaned.count(i)
+
+
 
     return frequency
 
@@ -83,6 +82,7 @@ def analyze_file(filename):
     Args:
         filename (str): Name of the file to analyze
     """
+    
     print(f"\nAnalyzing: {filename}")
     print("-" * 40)
 
