@@ -25,7 +25,7 @@ def analyze_numbers(numbers):
 
     count = len(numbers)
     sum_var = sum(numbers)
-    average_var = sum_var/count
+    average_var = sum_var/count if count > 0 else 0
     min_var = min(numbers)
     max_var = max(numbers)
     list_even =[]
